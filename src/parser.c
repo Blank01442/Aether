@@ -71,6 +71,13 @@ ASTNode* factor() {
             match(TOKEN_LPAREN, "("); ASTNode* msg = expression(); match(TOKEN_RPAREN, ")");
             ASTNode* n = create_node(NODE_ALERT, t.line); n->data.print_stmt.expr = msg; return n;
         }
+        if (strcmp(t.value, "write") == 0 || strcmp(t.value, "append") == 0) {
+            ASTNode* data = expression(); match(TOKEN_TO, "usage: write [data] to [file]");
+            ASTNode* file = expression();
+            ASTNode* n = create_node(NODE_FILE_WRITE, t.line);
+            n->data.bin_op.left = data; n->data.bin_op.right = file;
+            n->data.bin_op.op = strdup(t.value); return n;
+        }
         if (strcmp(t.value, "execute") == 0) {
             match(TOKEN_LPAREN, "("); ASTNode* cmd = expression(); match(TOKEN_RPAREN, ")");
             ASTNode* n = create_node(NODE_SYSTEM, t.line); n->data.print_stmt.expr = cmd; return n;

@@ -1,0 +1,17 @@
+import "web_client"
+import "utility"
+import "file_io"
+
+say "--- Aether Ultimate System Test ---"
+
+call clear_screen
+say "Checking System Info..."
+call show_system_info
+
+say "Testing Connectivity..."
+call ping_google
+
+say "Creating a System Log..."
+call create_log
+
+say "Expansion Test Complete."

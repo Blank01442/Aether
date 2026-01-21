@@ -48,6 +48,16 @@ void gen_expr(ASTNode* node, FILE* out) {
         fprintf(out, "    mov rdx, rax\n"); // lpText
         fprintf(out, "    xor rcx, rcx\n"); // hWnd NULL
         fprintf(out, "    call MessageBoxA\n");
+    } else if (node->type == NODE_FILE_WRITE) {
+        gen_expr(node->data.bin_op.right, out); // Path
+        fprintf(out, "    mov rcx, rax\n    lea rdx, [rel %c_mode]\n", (strcmp(node->data.bin_op.op, "write") == 0) ? 'w' : 'a');
+        fprintf(out, "    sub rsp, 32\n    call fopen\n    add rsp, 32\n    push rax\n"); // Save FILE*
+        gen_expr(node->data.bin_op.left, out); // Data
+        fprintf(out, "    mov r8, rax\n    pop rcx\n    push rcx\n"); // rcx = FILE*, r8 = Data
+        fprintf(out, "    lea rdx, [rel file_fmt]\n");
+        if (node->data.bin_op.left->result_type == TYPE_INT) fprintf(out, "    lea rdx, [rel num_fmt]\n");
+        else if (node->data.bin_op.left->result_type == TYPE_FLOAT) fprintf(out, "    lea rdx, [rel flt_fmt]\n");
+        fprintf(out, "    sub rsp, 32\n    call fprintf\n    add rsp, 32\n    pop rcx\n    sub rsp, 32\n    call fclose\n    add rsp, 32\n");
     } else if (node->type == NODE_SYSTEM) {
         gen_expr(node->data.print_stmt.expr, out);
         fprintf(out, "    mov rcx, rax\n    call system\n");
@@ -170,8 +180,9 @@ void find_vars(ASTNode* node) {
 void generate_code(ASTNode** stmts, int stmt_count, FILE* out) {
     FILE* t_code = tmpfile(); for (int i = 0; i < stmt_count; i++) gen_statement(stmts[i], t_code);
     fprintf(out, "extern printf, scanf, rand, srand, time, GetTickCount64, malloc, exp, system, Beep\n");
-    fprintf(out, "extern MessageBoxA, GetSystemMetrics, ExitProcess\n");
+    fprintf(out, "extern MessageBoxA, GetSystemMetrics, ExitProcess, fopen, fprintf, fclose\n");
     fprintf(out, "section .data\n    num_fmt db \"%%lld\", 10, 0\n    str_fmt db \"%%s\", 10, 0\n    flt_fmt db \"%%.4f\", 10, 0\n");
+    fprintf(out, "    w_mode db \"w\", 0\n    a_mode db \"a\", 0\n    file_fmt db \"%%s\", 0\n");
     for (int i = 0; i < string_count; i++) fprintf(out, "    %s db \"%s\", 0\n", strings[i].label, strings[i].value);
     var_count = 0; for (int i = 0; i < stmt_count; i++) find_vars(stmts[i]);
     for (int i = 0; i < var_count; i++) fprintf(out, "    %s dq 0\n", vars[i]);

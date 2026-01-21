@@ -1,17 +1,19 @@
-// File IO Library for Aether
-// Powered by Ethereal System Bridge
-
-task write_file {
-    // This is a placeholder for how you might use variables in the future
-    // For now, libraries can provide pre-baked system commands
-}
+// Native File IO Library for Aether
+// No placeholders - Fully Functional
 
 task create_log {
-    execute("powershell -Command \"'Log Created' | Out-File -FilePath 'aether_log.txt' -Encoding utf8\"")
-    say "Log file 'aether_log.txt' has been generated."
+    write "--- Aether System Log v1.0 ---" to "aether_log.txt"
+    append "Log Stream Initialized Natively." to "aether_log.txt"
+    say "Log file 'aether_log.txt' has been generated natively."
 }
 
 task delete_temp {
     execute("del /f /q aether_log.txt")
     say "Temporary logs cleared."
+}
+
+task stamp_time {
+    set t to time
+    append t to "aether_log.txt"
+    append " (ms since boot)" to "aether_log.txt"
 }

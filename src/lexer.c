@@ -62,6 +62,8 @@ Token* get_tokens(const char* source, int* count) {
             else if (strcmp(buf, "import") == 0) tokens[c++] = *create_token(TOKEN_IMPORT, buf, line, sc);
             else if (strcmp(buf, "alert") == 0) tokens[c++] = *create_token(TOKEN_ID, "alert", line, sc);
             else if (strcmp(buf, "execute") == 0) tokens[c++] = *create_token(TOKEN_ID, "execute", line, sc);
+            else if (strcmp(buf, "write") == 0) tokens[c++] = *create_token(TOKEN_ID, "write", line, sc);
+            else if (strcmp(buf, "append") == 0) tokens[c++] = *create_token(TOKEN_ID, "append", line, sc);
             else if (strcmp(buf, "exit") == 0) tokens[c++] = *create_token(TOKEN_ID, "exit", line, sc);
             else if (strcmp(buf, "true") == 0) tokens[c++] = *create_token(TOKEN_TRUE, buf, line, sc);
             else if (strcmp(buf, "false") == 0) tokens[c++] = *create_token(TOKEN_FALSE, buf, line, sc);
