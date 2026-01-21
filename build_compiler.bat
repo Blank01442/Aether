@@ -1,6 +1,6 @@
 @echo off
 setlocal
-echo Building Aether Compiler v2.7 "Ethereal Edition"...
+echo Building Aether Compiler v1.0 "Universal Edition"...
 
 :: Compile resource
 windres src/resource.rc -o src/resource.obj
@@ -11,7 +11,7 @@ gcc src/main.c src/lexer.c src/parser.c src/codegen.c src/resource.obj -o bin/ae
 if %ERRORLEVEL% EQU 0 (
     echo.
     echo ----------------------------------------------------
-    echo Success! Aether v2.7 is ready.
+    echo Success! Aether v1.0 is ready.
     echo.
     echo The 'ae' command is located in:
     echo %cd%\bin
