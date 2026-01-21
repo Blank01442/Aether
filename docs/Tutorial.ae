@@ -1,0 +1,74 @@
+// Aether Tutorial: From Zero to Pro
+// This script demonstrates the core power of Aether v1.0
+
+import "sound"
+import "utility"
+import "win_ui"
+
+task header {
+    call clear_screen
+    say "--- Aether v1.0 Universal Tutorial ---"
+    call play_notif
+}
+
+task variable_demo {
+    say "1. Working with Variables"
+    set name to "Developer"
+    set version to 1.0
+    say "Hello, "
+    say name
+    say " - Running Aether v"
+    say version
+}
+
+task hardware_demo {
+    say "2. Native Hardware Control"
+    say "Generating a success melody..."
+    call play_success
+    
+    say "Getting screen metrics..."
+    set w to screen_width
+    set h to screen_height
+    say "Resolution: "
+    say w
+    say "x"
+    say h
+}
+
+task filesystem_demo {
+    say "3. High-Speed File IO"
+    write "Session started" to "tutorial.log"
+    append " - User authenticated" to "tutorial.log"
+    say "Log 'tutorial.log' created natively."
+    
+    say "Listing directory content via shell execution:"
+    execute("dir /w")
+}
+
+task logic_demo {
+    say "4. Advanced Control Flow"
+    set loops to 3
+    repeat loops times {
+        say "Fast repeat..."
+    }
+    
+    for i from 1 to 5 {
+        if i == 3 {
+            say "Reached the midpoint!"
+            beep(1000, 50)
+        }
+    }
+}
+
+task finalize {
+    alert("Tutorial Complete! You are now an Aether Pro.")
+    call play_success
+}
+
+// Main Execution
+call header
+call variable_demo
+call hardware_demo
+call filesystem_demo
+call logic_demo
+call finalize
