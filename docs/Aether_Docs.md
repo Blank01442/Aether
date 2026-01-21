@@ -141,7 +141,7 @@ Even masters trip up. Here’s what to watch out for:
     -   ✅ `set x to 10`
 2.  **Task Braces**: Tasks **must** open with a `{` on the same line.
 3.  **Strings**: Always use double-quotes `"`.
-4.  **Permissions**: If `setup.exe` or `ae` fails, ensure you are running in a terminal with **Administrator privileges** to allow the compiler to write to `C:\Aether`.
+4.  **Permissions**: If `setup.exe` fails, ensure you are running in a terminal with **Administrator privileges** to allow the installer to provision the Toolchain and write to `C:\Aether`. Aether handles NASM and GCC setup automatically for you.
 
 ---
 
