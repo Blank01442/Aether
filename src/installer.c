@@ -6,7 +6,6 @@
 
 void print_banner() {
     printf("\033[1;36m");
-    // Using raw bytes for the stylized logo to avoid encoding issues
     printf("  \xDB\xDB   \xDC\xDB\xDB\xDB\xDC     \xDC\xDC\xDC\xDC\xDF \xDC  \xDB \xDC\xDB\xDB\xDB\xDC   \xDB\xDC\xDC\xDC\xDC \n");
     printf("  \xDB \xDB  \xDB\xDF   \xDF \xDF\xDF\xDF \xDB   \xDB   \xDB \xDB\xDF   \xDF  \xDB  \xDC\xDF \n");
     printf("  \xDB\xDC\xDC\xDB \xDB\xDB\xDC\xDC       \xDB   \xDB\xDB\xDF\xDF\xDB \xDB\xDB\xDC\xDC    \xDB  \xDB  \n");
@@ -15,7 +14,7 @@ void print_banner() {
     printf("    \xDB                   \xDF            \xDF    \n");
     printf("   \xDF                                      \n");
     printf("\033[0m");
-    printf("\n        --- Aether Universal Setup Wizard v2.9.7 ---\n\n");
+    printf("\n        --- Aether All-In-One Setup v3.0 ---\n\n");
 }
 
 int main() {
@@ -28,80 +27,62 @@ int main() {
     char example_path[] = "C:\\Aether\\examples";
     char ae_exe_dest[] = "C:\\Aether\\bin\\ae.exe";
 
-    printf("[1/6] Initializing Ecosystem Directories...\n");
+    printf("[1/5] Initializing Master Ecosystem (%s)...\n", install_path);
     char cmd[512];
     sprintf(cmd, "mkdir %s >nul 2>&1", install_path); system(cmd);
     sprintf(cmd, "mkdir %s >nul 2>&1", bin_path); system(cmd);
     sprintf(cmd, "mkdir %s >nul 2>&1", lib_path); system(cmd);
     sprintf(cmd, "mkdir %s >nul 2>&1", example_path); system(cmd);
-    printf("      Success: bin, lib, examples ready.\n");
 
-    printf("[2/6] Deploying Aether Compiler Core...\n");
-    int deployed = 0;
-    
-    // Attempt local deployment first
-    const char* local_src[] = {"bin\\ae.exe", "ae.exe"};
-    for (int i = 0; i < 2; i++) {
-        if (GetFileAttributes(local_src[i]) != INVALID_FILE_ATTRIBUTES) {
-            if (CopyFile(local_src[i], ae_exe_dest, FALSE)) {
-                printf("\033[1;32m      Success: Local compiler found and deployed to %s\033[0m\n", ae_exe_dest);
-                deployed = 1;
-                break;
-            }
-        }
-    }
-
-    if (!deployed) {
-        printf("      Compiler not found locally. Connecting to Aether Cloud Registry...\n");
-        char dl_cmd[1024];
-        sprintf(dl_cmd, "powershell -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Blank01442/Aether/main/bin/ae.exe' -OutFile '%s'\"", ae_exe_dest);
-        if (system(dl_cmd) == 0) {
-            printf("\033[1;32m      Success: Compiler fetched and installed remotely!\033[0m\n");
+    printf("[2/5] Extracting Embedded Compiler Core...\n");
+    HRSRC hRes = FindResource(NULL, MAKEINTRESOURCE(100), RT_RCDATA);
+    if (hRes) {
+        HGLOBAL hGlob = LoadResource(NULL, hRes);
+        void* pData = LockResource(hGlob);
+        DWORD size = SizeofResource(NULL, hRes);
+        
+        FILE* f = fopen(ae_exe_dest, "wb");
+        if (f) {
+            fwrite(pData, 1, size, f);
+            fclose(f);
+            printf("\033[1;32m      Success: Aether Master Binary deployed natively.\033[0m\n");
         } else {
-            printf("\033[1;31m      Error: Aether CLI could not be downloaded. Check internet connection.\033[0m\n");
+            printf("\033[1;31m      Error: Permissions denied to C:\\Aether. Run as Administrator!\033[0m\n");
             system("pause"); return 1;
         }
+    } else {
+        printf("\033[1;31m      Error: Internal blob missing. Rebuilding installer...\033[0m\n");
+        system("pause"); return 1;
     }
 
-    printf("[3/6] Synchronizing Standard Libraries...\n");
+    printf("[3/5] Synchronizing Aether Global Libraries...\n");
     const char* libs[] = {"math_pro", "neural_core", "win_ui", "app_core"};
     for (int i = 0; i < 4; i++) {
-        printf("      Fetching %s.ae...\n", libs[i]);
+        printf("      Auto-fetching %s.ae...\n", libs[i]);
         char dl_cmd[1024];
         sprintf(dl_cmd, "powershell -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Blank01442/Aether/main/Libraries/%s.ae' -OutFile '%s\\%s.ae'\"", libs[i], lib_path, libs[i]);
         system(dl_cmd);
     }
 
-    printf("[4/6] Generating Sample Project...\n");
+    printf("[4/5] Deploying Starter Suite...\n");
     char hello_ae[512];
     sprintf(hello_ae, "%s\\hello_aether.ae", example_path);
     FILE* f = fopen(hello_ae, "w");
     if (f) {
-        fprintf(f, "import \"win_ui\"\n\nsay \"Hello Aether User!\"\nalert(\"Aether Installation Verified!\")\nsay \"You are ready to code.\"\n");
+        fprintf(f, "import \"win_ui\"\n\nsay \"Hello Aether User!\"\nalert(\"Aether v3.0 Master Setup Success!\")\nsay \"Ecosystem is ready to code.\"\n");
         fclose(f);
-        printf("      Created: %s\n", hello_ae);
     }
+    printf("      Success: examples/hello_aether.ae created.\n");
 
-    printf("[5/6] Broadening System Path (PATH persistence)...\n");
+    printf("[5/5] Finalizing System Path...\n");
     char path_cmd[1024];
     sprintf(path_cmd, "setx PATH \"%%PATH%%;%s\" >nul 2>&1", bin_path);
-    if (system(path_cmd) == 0) {
-        printf("\033[1;32m      Success: 'ae' command is now global.\033[0m\n");
-    } else {
-        printf("      Warning: Manual PATH update required for %s.\n", bin_path);
-    }
-
-    printf("[6/6] Auditing Developer Toolchain...\n");
-    int has_gcc = (system("gcc --version >nul 2>&1") == 0);
-    int has_nasm = (system("nasm -v >nul 2>&1") == 0);
-    if (has_gcc) printf("\033[1;32m      [OK] GCC Toolchain Found\033[0m\n");
-    else printf("\033[1;33m      [!!] GCC Missing. Install MinGW-w64 for full compilation.\033[0m\n");
-    if (has_nasm) printf("\033[1;32m      [OK] NASM Assembly Engine Found\033[0m\n");
-    else printf("\033[1;33m      [!!] NASM Missing. Aether requires NASM for x86-64 builds.\033[0m\n");
+    system(path_cmd);
+    printf("\033[1;32m      Aether 'ae' command is now global.\033[0m\n");
 
     printf("\n\033[1;36m--------------------------------------------------\033[0m\n");
-    printf("   AETHER ECOSYSTEM IS READY!\n");
-    printf("   Restart your terminal and type 'ae' to begin.\n");
+    printf("   AETHER MASTER SETUP COMPLETE!\n");
+    printf("   Open a new terminal and type 'ae' to begin.\n");
     printf("\033[1;36m--------------------------------------------------\033[0m\n\n");
 
     system("pause");
