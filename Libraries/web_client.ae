@@ -14,16 +14,30 @@ task get_ip {
 
 task download_data {
     say "Attempting cloud data fetch..."
-    execute("curl -L -o download.tmp https://raw.githubusercontent.com/Blank01442/Aether/main/README.md")
-    say "Download successful: download.tmp"
+    if download_url {
+        execute("curl -L -o download.tmp " + download_url)
+        say "Download successful: download.tmp"
+    } else {
+        say "Set download_url variable first, e.g., set download_url to \"https://example.com/file.txt\""
+    }
 }
 
 task open_browser {
-    say "Opening default browser to Aether repository..."
-    execute("start https://github.com/Blank01442/Aether")
+    say "Opening default browser..."
+    if browser_url {
+        execute("start " + browser_url)
+    } else {
+        execute("start https://github.com/Blank01442/Aether")
+        say "Opened Aether repository. Set browser_url to customize."
+    }
 }
 
 task check_website {
-    say "Checking if GitHub is reachable..."
-    execute("curl -I https://github.com | findstr HTTP")
+    say "Checking website connectivity..."
+    if check_url {
+        execute("curl -I " + check_url + " | findstr HTTP")
+    } else {
+        execute("curl -I https://github.com | findstr HTTP")
+        say "Checked GitHub. Set check_url to customize."
+    }
 }

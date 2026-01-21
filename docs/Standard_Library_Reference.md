@@ -39,9 +39,9 @@ Native Filesystem Automation.
 Integration with the web and external networks.
 - `ping_google`: Rapid network connectivity test.
 - `get_ip`: Fetches the system's public IP using `curl`.
-- `download_data`: Downloads remote assets to the local directory.
-- `open_browser`: Opens the default browser to the Aether repository.
-- `check_website`: Checks if GitHub is reachable.
+- `download_data`: Downloads remote assets to the local directory. Set `download_url` variable to customize the URL.
+- `open_browser`: Opens the default browser. Set `browser_url` variable to customize the URL (defaults to Aether repo).
+- `check_website`: Checks website connectivity. Set `check_url` variable to customize the URL (defaults to GitHub).
 
 ## 7. `utility`
 General-purpose system management.
