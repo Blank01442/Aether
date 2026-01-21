@@ -52,8 +52,12 @@ ae install web_client
 Then use it in your code:
 ```aether
 import "web_client"
+import "utility"
+
 call get_ip
+call pause_system
 ```
+> **💡 Tip**: Use `call pause_system` at the end of your scripts to prevent the terminal from closing immediately after execution.
 
 ---
 
