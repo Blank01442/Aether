@@ -18,6 +18,7 @@ void print_banner() {
 }
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
     print_banner();
 
     char install_path[] = "C:\\Aether";
@@ -30,12 +31,17 @@ int main() {
     sprintf(cmd, "mkdir %s >nul 2>&1", bin_path); system(cmd);
 
     printf("[2/4] Deploying Aether Compiler Core...\n");
-    // Copy the current ae.exe to the destination
-    // Assuming the installer is run from the project root where bin/ae.exe exists
-    if (CopyFile("bin\\ae.exe", ae_exe_dest, FALSE)) {
+    // Check local or bin/
+    const char* src_file = "bin\\ae.exe";
+    if (GetFileAttributes(src_file) == INVALID_FILE_ATTRIBUTES) {
+        src_file = "ae.exe"; // Try current dir
+    }
+
+    if (CopyFile(src_file, ae_exe_dest, FALSE)) {
         printf("\033[1;32m      Success: Compiler deployed to %s\033[0m\n", ae_exe_dest);
     } else {
-        printf("\033[1;31m      Error: could not find bin\\ae.exe. Make sure to build the project first.\033[0m\n");
+        printf("\033[1;31m      Error: could not find Aether Compiler (ae.exe).\033[0m\n");
+        printf("      Please run this setup from the folder containing the Aether project.\n");
         system("pause");
         return 1;
     }
