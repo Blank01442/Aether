@@ -23,30 +23,49 @@ int main() {
 
     char install_path[] = "C:\\Aether";
     char bin_path[] = "C:\\Aether\\bin";
+    char lib_path[] = "C:\\Aether\\lib";
+    char example_path[] = "C:\\Aether\\examples";
     char ae_exe_dest[] = "C:\\Aether\\bin\\ae.exe";
 
-    printf("[1/4] Creating Directory Structure (%s)...\n", install_path);
+    printf("[1/5] Creating Directory Structure...\n");
     char cmd[512];
     sprintf(cmd, "mkdir %s >nul 2>&1", install_path); system(cmd);
     sprintf(cmd, "mkdir %s >nul 2>&1", bin_path); system(cmd);
+    sprintf(cmd, "mkdir %s >nul 2>&1", lib_path); system(cmd);
+    sprintf(cmd, "mkdir %s >nul 2>&1", example_path); system(cmd);
+    printf("      Created: bin, lib, examples\n");
 
-    printf("[2/4] Deploying Aether Compiler Core...\n");
-    // Check local or bin/
+    printf("[2/5] Deploying Aether Compiler Core...\n");
     const char* src_file = "bin\\ae.exe";
-    if (GetFileAttributes(src_file) == INVALID_FILE_ATTRIBUTES) {
-        src_file = "ae.exe"; // Try current dir
-    }
+    if (GetFileAttributes(src_file) == INVALID_FILE_ATTRIBUTES) src_file = "ae.exe";
 
     if (CopyFile(src_file, ae_exe_dest, FALSE)) {
         printf("\033[1;32m      Success: Compiler deployed to %s\033[0m\n", ae_exe_dest);
     } else {
         printf("\033[1;31m      Error: could not find Aether Compiler (ae.exe).\033[0m\n");
-        printf("      Please run this setup from the folder containing the Aether project.\n");
-        system("pause");
-        return 1;
+        system("pause"); return 1;
     }
 
-    printf("[3/4] Configuring System Environment (PATH)...\n");
+    printf("[3/5] Fetching Standard Libraries from Registry...\n");
+    const char* libs[] = {"math_pro", "neural_core", "win_ui", "app_core"};
+    for (int i = 0; i < 4; i++) {
+        printf("      Downloading %s.ae...\n", libs[i]);
+        char dl_cmd[1024];
+        sprintf(dl_cmd, "powershell -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Blank01442/Aether/main/Libraries/%s.ae' -OutFile '%s\\%s.ae'\"", libs[i], lib_path, libs[i]);
+        system(dl_cmd);
+    }
+
+    printf("[4/5] Creating Starter Project...\n");
+    char hello_ae[512];
+    sprintf(hello_ae, "%s\\hello_aether.ae", example_path);
+    FILE* f = fopen(hello_ae, "w");
+    if (f) {
+        fprintf(f, "import \"win_ui\"\n\nsay \"Hello Aether User!\"\nalert(\"Aether Installation Verified!\")\nsay \"You are ready to code.\"\n");
+        fclose(f);
+        printf("      Created: %s\n", hello_ae);
+    }
+
+    printf("[5/6] Configuring System Environment (PATH)...\n");
     char path_cmd[1024];
     // Use setx to add to USER path (persistence)
     sprintf(path_cmd, "setx PATH \"%%PATH%%;%s\" >nul 2>&1", bin_path);
@@ -56,7 +75,7 @@ int main() {
         printf("      Warning: Could not update PATH automatically. Please add %s manually.\n", bin_path);
     }
 
-    printf("[4/4] Verifying Dependencies (GCC & NASM)...\n");
+    printf("[6/6] Verifying Toolchain (GCC & NASM)...\n");
     int has_gcc = (system("gcc --version >nul 2>&1") == 0);
     int has_nasm = (system("nasm -v >nul 2>&1") == 0);
 
