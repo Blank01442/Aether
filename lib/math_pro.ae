@@ -1,0 +1,8 @@
+task say_hi {
+    say "Hello from the Global Math Library!"
+}
+
+task calc_magic {
+    set x to 42
+    say x
+}

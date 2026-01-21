@@ -1,0 +1,11 @@
+﻿task shutdown
+{
+    say "Shutting down application..."
+    exit()
+}
+task wait_and_exit
+{
+    say "Press any key in console or close the alert to exit."
+    alert("Exit Application?")
+    exit()
+}
