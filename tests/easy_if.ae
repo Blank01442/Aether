@@ -1,9 +1,0 @@
-set score to 100
-if score is 100 {
-    say 1
-} else {
-    say 0
-}
-
-set x to 50
-if x > 10 { say 1337 }
