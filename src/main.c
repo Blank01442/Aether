@@ -7,18 +7,15 @@
 Token* acquire_tokens(const char* filename, int* total_count) {
     FILE* f = fopen(filename, "rb");
     if (!f) {
-        char lib_path[512];
-        sprintf(lib_path, "lib/%s", filename);
-        f = fopen(lib_path, "rb");
+        char path[512];
+        sprintf(path, "lib/%s", filename); f = fopen(path, "rb");
+        if (!f) { sprintf(path, "C:\\Aether\\lib\\%s", filename); f = fopen(path, "rb"); }
     }
     if (!f && !strstr(filename, ".ae")) {
-        char alt_path[512];
-        sprintf(alt_path, "%s.ae", filename);
-        f = fopen(alt_path, "rb");
-        if (!f) {
-            sprintf(alt_path, "lib/%s.ae", filename);
-            f = fopen(alt_path, "rb");
-        }
+        char path[512];
+        sprintf(path, "%s.ae", filename); f = fopen(path, "rb");
+        if (!f) { sprintf(path, "lib/%s.ae", filename); f = fopen(path, "rb"); }
+        if (!f) { sprintf(path, "C:\\Aether\\lib\\%s.ae", filename); f = fopen(path, "rb"); }
     }
     if (!f) {
         fprintf(stderr, "\033[1;31mError: Could not find import '%s'\033[0m\n", filename);

@@ -74,11 +74,15 @@ int main() {
     }
     printf("      Success: examples/hello_aether.ae created.\n");
 
-    printf("[5/5] Finalizing System Path...\n");
-    char path_cmd[1024];
-    sprintf(path_cmd, "setx PATH \"%%PATH%%;%s\" >nul 2>&1", bin_path);
-    system(path_cmd);
-    printf("\033[1;32m      Aether 'ae' command is now global.\033[0m\n");
+    printf("[5/5] Broadening System Path (User Environment)...\n");
+    char path_cmd[2048];
+    // This PowerShell command checks if the bin path is already in the USER Path, and if not, appends it.
+    sprintf(path_cmd, "powershell -Command \"$path = [System.Environment]::GetEnvironmentVariable('PATH', 'User'); if ($path -notlike '*%s*') { [System.Environment]::SetEnvironmentVariable('PATH', $path + ';%s', 'User') }\"", bin_path, bin_path);
+    if (system(path_cmd) == 0) {
+        printf("\033[1;32m      Success: 'ae' command is now registered globally.\033[0m\n");
+    } else {
+        printf("      Warning: Manual PATH update may be required for %s.\n", bin_path);
+    }
 
     printf("\n\033[1;36m--------------------------------------------------\033[0m\n");
     printf("   AETHER MASTER SETUP COMPLETE!\n");
