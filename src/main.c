@@ -59,14 +59,16 @@ Token* acquire_tokens(const char* filename, int* total_count) {
 }
 
 void install_library(const char* lib_name) {
-    printf("\033[1;36mFetching '%s' from Aether Universal Registry...\033[0m\n", lib_name);
+    printf("\033[1;36mConnecting to Aether Global Registry...\033[0m\n");
     system("if not exist lib mkdir lib");
     char cmd[1024];
-    sprintf(cmd, "powershell -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/AetherLang/Registry/main/libs/%s.ae' -OutFile 'lib/%s.ae'\"", lib_name, lib_name);
+    // We now fetch from the 'registry/libs' folder in your own repo!
+    sprintf(cmd, "powershell -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Blank01442/Aether/main/registry/libs/%s.ae' -OutFile 'lib/%s.ae'\"", lib_name, lib_name);
+    
     if (system(cmd) == 0) {
-        printf("\033[1;32mLibrary '%s' installed successfully.\033[0m\n", lib_name);
+        printf("\033[1;32mSUCCESS: Library '%s' installed to lib/%s.ae\033[0m\n", lib_name, lib_name);
     } else {
-        printf("\033[1;31mRegistry Error: Library '%s' not found.\033[0m\n", lib_name);
+        printf("\033[1;31mERROR: Could not find library '%s' in the registry.\033[0m\n", lib_name);
     }
 }
 
