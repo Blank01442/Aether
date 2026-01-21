@@ -1,0 +1,4 @@
+task say_neural {
+    say "Aether Neural Core v1.0 Initialized"
+    say "Ready for Matrix Operations"
+}

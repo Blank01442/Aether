@@ -1,0 +1,6 @@
+import "math_pro.ae"
+
+say "Starting Import Test..."
+call say_hi
+call calc_magic
+say "Import Test Success!"

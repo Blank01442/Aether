@@ -1,0 +1,17 @@
+// Utility Library for Aether
+
+task clear_screen {
+    execute("cls")
+}
+
+task pause_system {
+    execute("pause")
+}
+
+task list_files {
+    execute("dir /w")
+}
+
+task show_system_info {
+    execute("systeminfo | findstr /B /C:\"OS Name\" /C:\"OS Version\"")
+}
