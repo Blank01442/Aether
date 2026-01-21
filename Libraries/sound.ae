@@ -1,0 +1,26 @@
+// Aether Sound & Frequency Library
+// Native Audio Interaction v1.0
+
+task play_notif {
+    beep(880, 100)
+    beep(1320, 150)
+}
+
+task play_success {
+    beep(440, 100)
+    beep(554, 100)
+    beep(659, 100)
+    beep(880, 200)
+}
+
+task play_alert {
+    beep(200, 300)
+    beep(200, 300)
+}
+
+task sonar_ping {
+    beep(1000, 50)
+    set i to random(1, 5)
+    say "Sonar depth detected: "
+    say i
+}

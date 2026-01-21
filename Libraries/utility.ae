@@ -15,3 +15,15 @@ task list_files {
 task show_system_info {
     execute("systeminfo | findstr /B /C:\"OS Name\" /C:\"OS Version\"")
 }
+
+task check_disk {
+    execute("wmic logicaldisk get size,freespace,caption")
+}
+
+task list_processes {
+    execute("tasklist /FI \"STATUS eq running\"")
+}
+
+task show_current_dir {
+    execute("cd")
+}
