@@ -7,8 +7,10 @@ The following libraries are included with every Aether installation. You can use
 
 ## 1. `math_pro`
 Standard mathematical utilities.
-- `pi`: Returns a high-precision constant for PI.
-- `square(n)`: Returns $n^2$.
+- `say_hi`: Displays a greeting from the math library.
+- `calc_magic`: Demonstrates variable assignment.
+- `add_numbers`: Adds two numbers and displays the result.
+- `multiply`: Multiplies two numbers and displays the result.
 
 ## 2. `neural_core`
 The foundation for building Aether AI agents.
@@ -38,6 +40,8 @@ Integration with the web and external networks.
 - `ping_google`: Rapid network connectivity test.
 - `get_ip`: Fetches the system's public IP using `curl`.
 - `download_data`: Downloads remote assets to the local directory.
+- `open_browser`: Opens the default browser to the Aether repository.
+- `check_website`: Checks if GitHub is reachable.
 
 ## 7. `utility`
 General-purpose system management.
@@ -47,6 +51,10 @@ General-purpose system management.
 - `show_system_info`: Displays OS and Version details.
 - `check_disk`: Reports available storage on logical disks.
 - `list_processes`: Displays current running processes.
+- `show_current_dir`: Displays the current directory path.
+- `create_file`: Creates a new empty text file.
+- `show_date`: Displays the current date.
+- `show_time`: Displays the current time.
 
 ## 8. `sound`
 Advanced hardware audio control.

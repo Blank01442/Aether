@@ -27,3 +27,16 @@ task list_processes {
 task show_current_dir {
     execute("cd")
 }
+
+task create_file {
+    execute("echo. > new_file.txt")
+    say "Created new_file.txt"
+}
+
+task show_date {
+    execute("date /t")
+}
+
+task show_time {
+    execute("time /t")
+}

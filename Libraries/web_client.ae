@@ -17,3 +17,13 @@ task download_data {
     execute("curl -L -o download.tmp https://raw.githubusercontent.com/Blank01442/Aether/main/README.md")
     say "Download successful: download.tmp"
 }
+
+task open_browser {
+    say "Opening default browser to Aether repository..."
+    execute("start https://github.com/Blank01442/Aether")
+}
+
+task check_website {
+    say "Checking if GitHub is reachable..."
+    execute("curl -I https://github.com | findstr HTTP")
+}
