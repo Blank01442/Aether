@@ -1,5 +1,0 @@
-import "neural_core"
-
-say "--- Testing Registry Download ---"
-call say_neural
-say "SUCCESS: Registry is fully operational!"

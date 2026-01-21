@@ -1,6 +1,0 @@
-say "Testing the Smart Debugger..."
-
-set x 10
-// The line above is missing 'to'. 
-// Aether v2.5 should say: "Missing 'to' in variable assignment" 
-// and suggest: "Correct way: 'set x TO 10'"
