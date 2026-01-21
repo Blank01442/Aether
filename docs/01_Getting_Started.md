@@ -1,6 +1,8 @@
 # 🏁 Getting Started with Aether
 **Your first 5 minutes in the Ethereal Ecosystem.**
 
+> **🛑 Master Requirement**: Aether requires **NASM** and **GCC** installed on your system to compile scripts into executables. If you see "nasm not recognized," ensure they are in your System PATH.
+
 Follow these steps to go from nothing to a working Aether development environment.
 
 ---
