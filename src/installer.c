@@ -6,15 +6,15 @@
 
 void print_banner() {
     printf("\033[1;36m");
-    printf("  \xDB\xDB   \xDC\xDB\xDB\xDB\xDC     \xDC\xDC\xDC\xDC\xDF \xDC  \xDB \xDC\xDB\xDB\xDB\xDC   \xDB\xDC\xDC\xDC\xDC \n");
-    printf("  \xDB \xDB  \xDB\xDF   \xDF \xDF\xDF\xDF \xDB   \xDB   \xDB \xDB\xDF   \xDF  \xDB  \xDC\xDF \n");
-    printf("  \xDB\xDC\xDC\xDB \xDB\xDB\xDC\xDC       \xDB   \xDB\xDB\xDF\xDF\xDB \xDB\xDB\xDC\xDC    \xDB  \xDB  \n");
-    printf("  \xDB  \xDB \xDB\xDC   \xDC\xDF   \xDB    \xDB   \xDB \xDB\xDC   \xDC\xDF \xDB  \xDB  \n");
-    printf("     \xDB \xDF\xDB\xDB\xDB\xDF    \xDF        \xDB  \xDF\xDB\xDB\xDB\xDF     \xDB   \n");
-    printf("    \xDB                   \xDF            \xDF    \n");
-    printf("   \xDF                                      \n");
+    printf("  ██   ▄███▄     ▄▄▄▄▀ ▄  █ ▄███▄   █▄▄▄▄ \n");
+    printf("  █ █  █▀   ▀ ▀▀▀ █   █   █ █▀   ▀  █  ▄▀ \n");
+    printf("  █▄▄█ ██▄▄       █   ██▀▀█ ██▄▄    █▀▀▌ \n");
+    printf("  █  █ █▄   ▄▀   █    █   █ █▄   ▄▀ █  █  \n");
+    printf("     █ ▀███▀    ▀        █  ▀███▀     █   \n");
+    printf("    █                   ▀            ▀    \n");
+    printf("   ▀                                      \n");
     printf("\033[0m");
-    printf("\n        --- Aether All-In-One Setup v3.0 ---\n\n");
+    printf("\n        --- Aether All-In-One Setup v3.1 ---\n\n");
 }
 
 int main() {
