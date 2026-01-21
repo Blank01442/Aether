@@ -1,4 +1,4 @@
-# 🌌 Aether Programming Language v2.9
+# 🌌 Aether Programming Language v1.0
 **The Universal Neural Programming Language**
 
 ![Aether Logo](https://raw.githubusercontent.com/AetherLang/Aether/main/logo.png)
@@ -19,7 +19,7 @@ Aether is a high-performance, neural-first programming language designed for hum
 ## 💎 Quick Syntax Showcase
 
 ```aether
-// Aether v2.9 Logic
+// Aether v1.0 Logic
 import "neural_core"
 
 task train_epoch {
@@ -35,7 +35,7 @@ task train_epoch {
 
 call train_epoch
 ```
-
+            
 ---
 
 ## 🛠️ Installation & Usage
@@ -71,6 +71,6 @@ Aether includes a built-in package manager that fetches from the central registr
 ---
 
 ## 📜 Metadata
-- **Version**: 2.9.0.0 (Neural Edition)
+- **Version**: 1.0.0.0 (Neural Edition)
 - **License**: MIT
 - **Contact**: Aether Intelligence

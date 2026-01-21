@@ -14,7 +14,7 @@ void print_banner() {
     printf("    █                   ▀            ▀    \n");
     printf("   ▀                                      \n");
     printf("\033[0m");
-    printf("\n        --- Aether All-In-One Setup v3.1 ---\n\n");
+    printf("\n        --- Aether All-In-One Setup v1.0 ---\n\n");
 }
 
 int main() {
@@ -32,7 +32,7 @@ int main() {
     sprintf(cmd, "mkdir %s >nul 2>&1", install_path); system(cmd);
     sprintf(cmd, "mkdir %s >nul 2>&1", bin_path); system(cmd);
     sprintf(cmd, "mkdir %s >nul 2>&1", lib_path); system(cmd);
-    sprintf(cmd, "mkdir %s >nul 2>&1", example_path); system(cmd);
+    sprintf(cmd, "mkdir %s >nul 2>&1", example_path); system(cmd);      
 
     printf("[2/5] Extracting Embedded Compiler Core...\n");
     HRSRC hRes = FindResource(NULL, MAKEINTRESOURCE(100), RT_RCDATA);
@@ -69,7 +69,7 @@ int main() {
     sprintf(hello_ae, "%s\\hello_aether.ae", example_path);
     FILE* f = fopen(hello_ae, "w");
     if (f) {
-        fprintf(f, "import \"win_ui\"\n\nsay \"Hello Aether User!\"\nalert(\"Aether v3.0 Master Setup Success!\")\nsay \"Ecosystem is ready to code.\"\n");
+        fprintf(f, "import \"win_ui\"\n\nsay \"Hello Aether User!\"\nalert(\"Aether v1.0 Master Setup Success!\")\nsay \"Ecosystem is ready to code.\"\n");
         fclose(f);
     }
     printf("      Success: examples/hello_aether.ae created.\n");

@@ -71,7 +71,7 @@ void install_library(const char* lib_name) {
 
 int main(int argc, char** argv) {
     if (argc < 2) {
-        printf("Aether v2.9 Universal Edition\nUsage: ae <file.ae> [-r] | ae install <lib>\n");
+        printf("Aether v1.0 Universal Edition\nUsage: ae <file.ae> [-r] | ae install <lib>\n");
         return 1;
     }
 
@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
     printf("    █                   ▀            ▀    \n");
     printf("   ▀                                      \n");
     printf("\033[0m");
-    printf("\033[1;30m        --- v2.9 Universal Edition (Imports + Registry) ---\033[0m\n\n");
+    printf("\033[1;30m        --- v1.0 Universal Edition (Imports + Registry) ---\033[0m\n\n");
 
     int run_after = 0;
     if (argc > 2 && strcmp(argv[2], "-r") == 0) run_after = 1;

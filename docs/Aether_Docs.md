@@ -1,4 +1,4 @@
-# 🌌 Aether Programming Language v2.7
+# 🌌 Aether Programming Language v1.0
 **Ethereal Edition** - *The high-performance AI & Logic Language*
 
 Aether is designed to be the easiest, most readable, and fastest language for human-AI collaboration. It compiles directly to x86-64 Assembly for blazing-fast execution.
@@ -13,7 +13,7 @@ Aether is smart. It automatically detects if you are using an Integer, Float, or
 set score to 100            // Integer
 set learning_rate to 0.001  // Float (AI Ready)
 set name to "Alpha-1"       // String
-set running to true         // Boolean (v2.7)
+set running to true         // Boolean (v1.0)
 ```
 
 ### 2. Output
@@ -39,7 +39,7 @@ while score < 110 {
     set score to score + 1
 }
 
-// Pro For-Loop (v2.7)
+// Pro For-Loop (v1.0)
 for i from 1 to 10 {
     say i
 }
@@ -50,7 +50,7 @@ repeat 5 times {
 }
 ```
 
-### 4. Tasks (Functions) - v2.7
+### 4. Tasks (Functions) - v1.0
 Encapsulate your logic into clean "Tasks".
 ```aether
 task greet {
@@ -77,7 +77,7 @@ array weights from 1000  // Allocates high-speed memory
 ---
 
 ## 🛡️ Smart Pro Debugger
-Aether v2.7 doesn't just crash. It tells you what happened and how to fix it.
+Aether v1.0 doesn't just crash. It tells you what happened and how to fix it.
 **Example Error:**
 ```text
 ISSUE at Line 5, Col 10: Found an unexpected word.

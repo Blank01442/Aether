@@ -1,6 +1,6 @@
 1 VERSIONINFO
-FILEVERSION 2,9,7,0
-PRODUCTVERSION 2,9,7,0
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
 FILEFLAGSMASK 0x3fL
 FILEFLAGS 0x0L
 FILEOS 0x40004L
@@ -13,12 +13,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Aether Intelligence"
             VALUE "FileDescription", "Aether Universal Setup"
-            VALUE "FileVersion", "2.9.7.0"
+            VALUE "FileVersion", "1.0.0.0"
             VALUE "InternalName", "setup"
             VALUE "LegalCopyright", "Copyright (C) 2026 Aether Intelligence"
             VALUE "OriginalFilename", "setup.exe"
             VALUE "ProductName", "Aether Programming Language"
-            VALUE "ProductVersion", "2.9.7.0"
+            VALUE "ProductVersion", "1.0.0.0"
         END
     END
     BLOCK "VarFileInfo"
@@ -30,3 +30,4 @@ END
 // Embed the compiler core inside the installer!
 // Type 10 is RCDATA
 100 RCDATA "bin/ae.exe"
+101 RCDATA "lib/math_pro.ae"    
