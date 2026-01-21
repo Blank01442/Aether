@@ -1,5 +1,0 @@
-set i to 0
-while i < 5 {
-    say i
-    set i to i + 1
-}
