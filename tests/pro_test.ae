@@ -1,0 +1,19 @@
+// This is our first major test for Aether v2!
+say "--- Aether v2 Pro ---"
+
+set score to 100
+set i to 0
+
+while i < 3 {
+    say "Counting..."
+    say i
+    set i to i + 1
+}
+
+if score is 100 {
+    say "Perfect Score!"
+} else {
+    say "Try Again"
+}
+
+say "Done."
