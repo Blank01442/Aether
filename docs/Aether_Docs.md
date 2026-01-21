@@ -1,17 +1,17 @@
-# 🌌 Aether Language: The Universal Documentation
+# 🌌 Aether: The Master Guide
 **Version 1.0.0 (Universal Edition)**  
-*The high-performance, neural-first logic engine.*
+*Low-Level Power. High-Level Elegance.*
 
-Aether is a Compiled, High-Level language that speaks directly to the metal. Designed for speed (x86-64 NASM) and simplicity (Human-Readable Syntax), it empowers developers to build everything from AI neural nets to system automation tools with zero overhead.
+Welcome to Aether. You are holding a compiler that bridges the gap between the efficiency of x86-64 Assembly and the readability of modern logic. This guide will take you from a novice "player" to a master architect of the Aether ecosystem.
 
 ---
 
-## 🚀 Quick Start
-To get started, ensures you have the **Aether Ecosystem** installed via `setup.exe`.
+## ⚡ The Quick-Start Loop
+Aether is built for a fast **Write -> Compile -> Run** cycle.
 
-1. **Create a file**: `main.ae`
-2. **Write code**: `say "Hello Aether"`
-3. **Compile & Run**: `ae main.ae -r`
+1. **Craft a file**: `hello.ae`
+2. **Inject logic**: `say "System Online"`
+3. **Execute**: `ae hello.ae -r`
 
 ---
 
@@ -52,41 +52,30 @@ while health > 0 {
 }
 ```
 
-### 3. Functional Units (Tasks)
-Tasks are the building blocks of Aether applications. They are highly efficient and easy to call.
+### 4. Tasks (Procedures)
+Tasks allow you to wrap complex logic into reusable blocks. They are zero-overhead and highly performant.
 ```aether
-task finalize_boot {
-    say "System initialized."
-    beep(880, 100)
+task confirm_startup {
+    say "Aether Engine: Operational."
+    beep(880, 100) // Auditory feedback
 }
 
-call finalize_boot
+call confirm_startup
 ```
 
 ---
 
-## 🔌 Native Primitives (New in v1.0)
-Aether v1.0 "Universal Edition" introduces powerful native primitives for hardware and OS interaction.
+## 🛠️ The Power Primitives (v1.0)
+These are the "Heavy Hitters" of the Aether language—native commands that talk directly to Windows and the CPU.
 
-### 📁 File I/O
-Interact with the filesystem directly with extreme speed.
-```aether
-write "Data logged." to "app.log"
-append " - [Timestamp Secured]" to "app.log"
-```
-
-### 🔊 Hardware & Audio
-Generate pure square-wave audio for notifications or signals. Low-level accessibility with high-level syntax.
-```aether
-beep(440, 200) // frequency (Hz), duration (ms)
-```
-
-### 🛰️ System Execution
-Run any shell command or native binary.
-```aether
-execute("dir /w")
-execute("curl https://google.com")
-```
+| Command | Action | Example |
+| :--- | :--- | :--- |
+| `write` | Create/Overwrite a file | `write "Data" to "save.txt"` |
+| `append` | Add data to end of file | `append "Log" to "save.txt"` |
+| `beep` | Play a system frequency | `beep(440, 200)` |
+| `execute` | Run machine commands | `execute("dir /w")` |
+| `alert` | Pop up a system window | `alert("Done!")` |
+| `exit` | Kill the current process | `exit` |
 
 ### 🖼️ Native Windows UI
 Create system dialogues and query hardware info.
@@ -141,6 +130,23 @@ Aether v1.0 comes with a suite of professional-grade libraries:
 6. `web_client`: Network interactions (ping, public IP lookup).
 7. `utility`: System cleanup, process listing, and directory tools.
 8. `sound`: Pre-defined audio patterns (success, notification, sonar).
+
+---
+
+## ⚠️ Common Pitfalls & Pro-Tips
+Even masters trip up. Here’s what to watch out for:
+
+1.  **The 'to' Keyword**: Assignments use `to`, not `=`.
+    -   ❌ `set x = 10`
+    -   ✅ `set x to 10`
+2.  **Task Braces**: Tasks **must** open with a `{` on the same line.
+3.  **Strings**: Always use double-quotes `"`.
+4.  **Permissions**: If `setup.exe` or `ae` fails, ensure you are running in a terminal with **Administrator privileges** to allow the compiler to write to `C:\Aether`.
+
+---
+
+## 🏆 Becoming a Master
+The best way to learn is to play. Check out `docs/Tutorial.ae` for a live-action demonstration of every single feature in the language.
 
 ---
 
