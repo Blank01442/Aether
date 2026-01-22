@@ -1,5 +1,5 @@
 // Aether Comprehensive Tutorial
-// Learn all the features of Aether programming
+// Learn all the features of Aether programming - Easy but Powerful!
 
 import "sound"
 import "utility" 
@@ -9,7 +9,7 @@ import "math"
 
 // Simple greeting function
 task greet_user {
-    say "Welcome to Aether!"
+    say "Welcome to Aether - Easy but Powerful!"
     call play_notif
 }
 
@@ -26,7 +26,7 @@ task show_variables {
     say version
 }
 
-// Demonstrate new mathematical functions
+// Demonstrate new mathematical functions - easy to use but powerful
 task show_math_functions {
     say "Testing new mathematical functions:"
     
@@ -49,9 +49,27 @@ task show_math_functions {
     say decimal
     say " is "
     say ceiled
+    
+    set num1 to 15
+    set num2 to 25
+    set smallest to min(num1, num2)
+    say "Minimum of "
+    say num1
+    say " and "
+    say num2
+    say " is "
+    say smallest
+    
+    set largest to max(num1, num2)
+    say "Maximum of "
+    say num1
+    say " and "
+    say num2
+    say " is "
+    say largest
 }
 
-// Demonstrate new string functions
+// Demonstrate new string functions - simple but useful
 task show_string_functions {
     say "Testing new string functions:"
     

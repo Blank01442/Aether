@@ -110,7 +110,7 @@ set first_score to scores[0]  // Read from array
 
 ## Built-in Functions
 
-Aether has several built-in functions:
+Aether has several built-in functions that are easy to use but powerful:
 
 ### Mathematical Functions
 - `say(value)` - Print to console
@@ -118,18 +118,19 @@ Aether has several built-in functions:
 - `exp(value)` - Calculate exponent
 - `random(min, max)` - Generate random integer between min and max
 - `time` - Get current time in milliseconds since system boot
-- `abs(value)` - Calculate absolute value
+- `abs(value)` - Calculate absolute value (e.g., `abs(-5)` returns `5`)
 - `floor(value)` - Round down to nearest integer
 - `ceil(value)` - Round up to nearest integer
-- `min(val1, val2)` - Return smaller of two values
-- `max(val1, val2)` - Return larger of two values
+- `round(value)` - Round to nearest integer
+- `min(val1, val2)` - Return smaller of two values (e.g., `min(5, 10)` returns `5`)
+- `max(val1, val2)` - Return larger of two values (e.g., `max(5, 10)` returns `10`)
 
 ### String Functions
-- `length(string)` - Get length of string
+- `length(string)` - Get length of string (e.g., `length("hello")` returns `5`)
 - `upper(string)` - Convert string to uppercase
 - `lower(string)` - Convert string to lowercase
-- `split(string, delimiter)` - Split string by delimiter
-- `join(array, delimiter)` - Join array elements with delimiter
+- `find(string, substring)` - Find position of substring in string
+- `replace(string, old, new)` - Replace occurrences of old substring with new
 
 ### System Functions
 - `beep(freq, duration)` - Play a sound (frequency in Hz, duration in ms)
@@ -176,6 +177,34 @@ import "utility"
 
 call play_success
 call pause_system
+```
+
+## Easy but Powerful Examples
+
+### Simple Math Operations
+```aether
+set temperature to -5
+set positive_temp to abs(temperature)  // Makes negative numbers positive
+say "Adjusted temperature: "
+say positive_temp
+```
+
+### Comparing Values
+```aether
+set score1 to 85
+set score2 to 92
+set highest to max(score1, score2)  // Find the larger value
+say "Highest score: "
+say highest
+```
+
+### Working with Text
+```aether
+set message to "Hello, World!"
+set msg_length to length(message)  // Count characters in string
+say "Message has "
+say msg_length
+say " characters"
 ```
 
 ## Customization Options
