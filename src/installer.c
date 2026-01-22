@@ -69,7 +69,7 @@ int main() {
     }
 
     printf("[4/5] Provisioning AI Toolchain (NASM & GCC)...\n");
-    char tool_check[] = "C:\\Aether\\tools\\w64devkit-1.23.0\\bin\\gcc.exe";
+    char tool_check[] = "C:\\Aether\\tools\\w64devkit-1.23.0\\bin";
     FILE* check = fopen(tool_check, "r");
     if (check) {
         fclose(check);
