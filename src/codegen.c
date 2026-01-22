@@ -184,8 +184,8 @@ void gen_statement(ASTNode* node, FILE* out) {
 char* vars[4096]; int var_count = 0;
 void find_vars(ASTNode* node) {
     if (!node) return;
-    if (node->type == NODE_VAR_DECL || node->type == NODE_FOR_STMT || node->type == NODE_ARRAY_DECL) {
-        char* name = (node->type == NODE_VAR_DECL) ? node->data.var_decl.name : (node->type == NODE_FOR_STMT) ? node->data.for_stmt.var_name : node->data.array_decl.name;
+    if (node->type == NODE_VAR_DECL || node->type == NODE_FOR_STMT || node->type == NODE_ARRAY_DECL || node->type == NODE_VAR) {
+        char* name = (node->type == NODE_VAR_DECL) ? node->data.var_decl.name : (node->type == NODE_FOR_STMT) ? node->data.for_stmt.var_name : (node->type == NODE_ARRAY_DECL) ? node->data.array_decl.name : node->data.var_name;
         for (int i = 0; i < var_count; i++) if (strcmp(vars[i], name) == 0) return;
         vars[var_count++] = name;
     }
