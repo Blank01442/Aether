@@ -1,9 +1,11 @@
-// Aether Tutorial
-// Learn the basics of Aether programming
+// Aether Comprehensive Tutorial
+// Learn all the features of Aether programming
 
 import "sound"
 import "utility" 
 import "win_ui"
+import "web_client"
+import "math_pro"
 
 // Simple greeting function
 task greet_user {
@@ -32,7 +34,10 @@ task show_loops {
     }
     
     for i from 1 to 5 {
-        say i
+        if i is 3 {
+            say "Reached the midpoint!"
+            beep(1000, 50)
+        }
     }
 }
 
@@ -48,7 +53,7 @@ task show_files {
 task show_conditions {
     set score to 85
     
-    if score >= 80 {
+    if score > 80 {
         say "Good job! Score: "
         say score
         call play_success
@@ -58,12 +63,37 @@ task show_conditions {
     }
 }
 
+// Show customization with math library
+task show_custom_math {
+    say "Using math library with custom values:"
+    set num1 to 10
+    set num2 to 25
+    call add_numbers
+}
+
+// Show system utilities
+task show_utilities {
+    say "Using system utilities:"
+    call clear_screen
+    say "Screen cleared"
+    call show_date
+    call show_time
+}
+
+// Show web functions
+task show_web {
+    say "Web client functions:"
+    call ping_google
+}
+
 // Main program execution
 call greet_user
 call show_variables
 call show_loops
 call show_files
 call show_conditions
+call show_custom_math
+call show_utilities
 
 // Pause so we can see the results
 call pause_system
