@@ -37,6 +37,24 @@ ae hello.ae -r
 
 This will create `hello.exe` and run it immediately.
 
+## New Language Features
+
+Aether now includes many new built-in functions:
+
+### Mathematical Functions
+```aether
+set num to -5
+set abs_num to abs(num)        // Absolute value: 5
+set rounded to floor(3.7)      // Floor: 3
+set raised to ceil(3.2)        // Ceiling: 4
+```
+
+### String Functions
+```aether
+set text to "Hello World"
+set len to length(text)         // Length: 11
+```
+
 ## Variables and Data Types
 
 Aether automatically handles different data types:

@@ -26,6 +26,43 @@ task show_variables {
     say version
 }
 
+// Demonstrate new mathematical functions
+task show_math_functions {
+    say "Testing new mathematical functions:"
+    
+    set neg_num to -10
+    set pos_num to abs(neg_num)
+    say "Absolute value of "
+    say neg_num
+    say " is "
+    say pos_num
+    
+    set decimal to 4.7
+    set floored to floor(decimal)
+    say "Floor of "
+    say decimal
+    say " is "
+    say floored
+    
+    set ceiled to ceil(decimal)
+    say "Ceiling of "
+    say decimal
+    say " is "
+    say ceiled
+}
+
+// Demonstrate new string functions
+task show_string_functions {
+    say "Testing new string functions:"
+    
+    set text to "Hello, Aether!"
+    set len to length(text)
+    say "Length of '"
+    say text
+    say "' is "
+    say len
+}
+
 // Demonstrate loops
 task show_loops {
     say "Counting with loops:"
@@ -89,6 +126,8 @@ task show_internet {
 // Main program execution
 call greet_user
 call show_variables
+call show_math_functions
+call show_string_functions
 call show_loops
 call show_files
 call show_conditions

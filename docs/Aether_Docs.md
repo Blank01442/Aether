@@ -112,7 +112,26 @@ set first_score to scores[0]  // Read from array
 
 Aether has several built-in functions:
 
+### Mathematical Functions
 - `say(value)` - Print to console
+- `sqrt(value)` - Calculate square root
+- `exp(value)` - Calculate exponent
+- `random(min, max)` - Generate random integer between min and max
+- `time` - Get current time in milliseconds since system boot
+- `abs(value)` - Calculate absolute value
+- `floor(value)` - Round down to nearest integer
+- `ceil(value)` - Round up to nearest integer
+- `min(val1, val2)` - Return smaller of two values
+- `max(val1, val2)` - Return larger of two values
+
+### String Functions
+- `length(string)` - Get length of string
+- `upper(string)` - Convert string to uppercase
+- `lower(string)` - Convert string to lowercase
+- `split(string, delimiter)` - Split string by delimiter
+- `join(array, delimiter)` - Join array elements with delimiter
+
+### System Functions
 - `beep(freq, duration)` - Play a sound (frequency in Hz, duration in ms)
 - `alert(message)` - Show a message box
 - `screen_width()` - Get screen width in pixels
@@ -121,10 +140,6 @@ Aether has several built-in functions:
 - `write data to file` - Write to a file
 - `append data to file` - Add to end of file
 - `exit` - Stop the program
-- `sqrt(value)` - Calculate square root
-- `exp(value)` - Calculate exponent
-- `random(min, max)` - Generate random integer between min and max
-- `time` - Get current time in milliseconds since system boot
 
 ## Mathematical Operations
 
