@@ -1,64 +1,57 @@
-# 🏁 Getting Started with Aether
-**Your first 5 minutes in the Ethereal Ecosystem.**
+# Getting Started with Aether
 
-> **⚡ Zero-Config Notice**: Aether is a high-performance compiled language. To make setup effortless, the installer automatically provisions the necessary **AI Toolchain (NASM & GCC)**. No manual installation is required.
+Aether is a programming language that compiles to Windows executables. This guide will help you set up and run your first Aether program.
 
-Follow these steps to go from nothing to a working Aether development environment.
+## Installation
 
----
-
-## 1. Installation
-1. Download `setup.exe` from the repository.
-2. Run it as **Administrator**.
+1. Download `setup.exe` from the repository
+2. Run it as Administrator (needed to install globally)
 3. The installer will:
-   - Create `C:\Aether`
-   - Extract the `ae.exe` compiler.
-   - Globally register the `ae` command.
-   - Sync the standard libraries.
+   - Place the `ae` compiler in `C:\Aether`
+   - Add it to your system PATH
+   - Install required tools (NASM assembler and GCC linker)
 
-## 2. Verify Your Power
-Open a **new** terminal (PowerShell or CMD) and type:
+## Verify Installation
+
+Open a new command prompt and type:
+
 ```bash
 ae
 ```
-If you see the Aether ASCII banner and version info, you are ready to code.
 
-## 3. Your First Script
-Create a file named `start.ae` and type:
+You should see the Aether logo and version information.
+
+## Your First Program
+
+Create a file called `hello.ae` with this content:
+
+```aether
+say "Hello, World!"
+```
+
+Compile and run it:
+
+```bash
+ae hello.ae -r
+```
+
+This will create `hello.exe` and run it immediately.
+
+## Installing Libraries
+
+Aether has a package manager for libraries:
+
+```bash
+ae install sound
+```
+
+Then use it in your code:
+
 ```aether
 import "sound"
-
-task begin {
-    say "Powering up Aether..."
-    call play_success
-    alert("System Online!")
-}
-
-call begin
+call play_success
 ```
 
-## 4. Run It
-Execute your script with the `-r` (run) flag:
-```bash
-ae start.ae -r
-```
-You should hear a melody, see a Windows alert, and see the terminal output.
+## Next Steps
 
-## 5. Expanding the Engine
-Want more features? Install a library from the Registry.
-```bash
-ae install web_client
-```
-Then use it in your code:
-```aether
-import "web_client"
-import "utility"
-
-call get_ip
-call pause_system
-```
-> **💡 Tip**: Use `call pause_system` at the end of your scripts to prevent the terminal from closing immediately after execution.
-
----
-
-**Next Steps:** Read `docs/Aether_Docs.md` for the full syntax guide.
+Check out `Aether_Docs.md` for complete language reference.

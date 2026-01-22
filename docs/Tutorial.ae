@@ -1,74 +1,69 @@
-// Aether Tutorial: From Zero to Pro
-// This script demonstrates the core power of Aether v1.0
+// Aether Tutorial
+// Learn the basics of Aether programming
 
 import "sound"
-import "utility"
+import "utility" 
 import "win_ui"
 
-task header {
-    call clear_screen
-    say "--- Aether v1.0 Universal Tutorial ---"
+// Simple greeting function
+task greet_user {
+    say "Welcome to Aether!"
     call play_notif
 }
 
-task variable_demo {
-    say "1. Working with Variables"
-    set name to "Developer"
+// Show how variables work
+task show_variables {
+    say "Let's work with variables:"
+    set name to "Aether User"
     set version to 1.0
-    say "Hello, "
+    set active to true
+    
+    say "Hello "
     say name
-    say " - Running Aether v"
+    say ", using Aether v"
     say version
 }
 
-task hardware_demo {
-    say "2. Native Hardware Control"
-    say "Generating a success melody..."
-    call play_success
-    
-    say "Getting screen metrics..."
-    set w to screen_width
-    set h to screen_height
-    say "Resolution: "
-    say w
-    say "x"
-    say h
-}
-
-task filesystem_demo {
-    say "3. High-Speed File IO"
-    write "Session started" to "tutorial.log"
-    append " - User authenticated" to "tutorial.log"
-    say "Log 'tutorial.log' created natively."
-    
-    say "Listing directory content via shell execution:"
-    execute("dir /w")
-}
-
-task logic_demo {
-    say "4. Advanced Control Flow"
-    set loops to 3
-    repeat loops times {
-        say "Fast repeat..."
+// Demonstrate loops
+task show_loops {
+    say "Counting with loops:"
+    repeat 3 times {
+        say "Loop iteration"
     }
     
     for i from 1 to 5 {
-        if i == 3 {
-            say "Reached the midpoint!"
-            beep(1000, 50)
-        }
+        say i
     }
 }
 
-task finalize {
-    alert("Tutorial Complete! You are now an Aether Pro.")
-    call play_success
+// Show file operations
+task show_files {
+    say "Creating a log file..."
+    write "Session started" to "demo.log"
+    append "Action completed" to "demo.log"
+    say "Log file created!"
 }
 
-// Main Execution
-call header
-call variable_demo
-call hardware_demo
-call filesystem_demo
-call logic_demo
-call finalize
+// Show conditional logic
+task show_conditions {
+    set score to 85
+    
+    if score >= 80 {
+        say "Good job! Score: "
+        say score
+        call play_success
+    } else {
+        say "Keep trying! Score: "
+        say score
+    }
+}
+
+// Main program execution
+call greet_user
+call show_variables
+call show_loops
+call show_files
+call show_conditions
+
+// Pause so we can see the results
+call pause_system
