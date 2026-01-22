@@ -99,6 +99,19 @@ import "sound"
 call play_success
 ```
 
+## Common Libraries
+
+Aether comes with several built-in libraries:
+
+- `sound` - Audio functions
+- `utility` - System utilities  
+- `internet` - Web and network functions
+- `file_io` - File operations
+- `dialogs` - Windows interface
+- `math` - Mathematical operations
+- `arrays` - Array handling
+- `system` - Application control
+
 ## Customization
 
 Many libraries allow customization by setting variables before calling functions:

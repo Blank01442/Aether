@@ -1,0 +1,12 @@
+// System library for Aether
+// Application control functions
+
+task shutdown {
+    say "Shutting down application..."
+    exit()
+}
+
+task exit_app {
+    say "Exiting application..."
+    exit()
+}

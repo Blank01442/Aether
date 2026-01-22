@@ -182,7 +182,7 @@ call custom_beep
 The math library allows custom calculations by setting variables:
 
 ```aether
-import "math_pro"
+import "math"
 
 set num1 to 15
 set num2 to 25
@@ -191,12 +191,12 @@ call add_numbers
 
 ### Array Operations
 
-Use the neural_core library for advanced array operations:
+Use the arrays library for advanced array operations:
 
 ```aether
-import "neural_core"
+import "arrays"
 
-call init_weights  // Creates a 10-element array called 'weights'
+call init_array  // Creates an array called 'data' with 10 elements
 ```
 
 ## Advanced Features
@@ -228,9 +228,9 @@ if logged_in {
 Common libraries include:
 - `sound` - Audio functions
 - `utility` - System utilities
-- `web_client` - Internet functions
+- `internet` - Internet functions
 - `file_io` - Advanced file operations
-- `win_ui` - Windows interface functions
-- `math_pro` - Mathematical functions
-- `neural_core` - Array and matrix operations
-- `app_core` - Application lifecycle
+- `dialogs` - Windows interface functions
+- `math` - Mathematical functions
+- `arrays` - Array and data structure operations
+- `system` - Application lifecycle

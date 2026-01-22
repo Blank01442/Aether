@@ -1,0 +1,29 @@
+// Internet library for Aether
+// Network and web functions
+
+task ping_site {
+    say "Testing internet connection..."
+    execute("ping google.com -n 1")
+}
+
+task get_my_ip {
+    say "Getting your public IP..."
+    execute("curl -s https://api.ipify.org")
+    say ""
+}
+
+task download_file {
+    say "Downloading sample file..."
+    execute("curl -L -o download.tmp https://raw.githubusercontent.com/Blank01442/Aether/main/README.md")
+    say "Download saved as: download.tmp"
+}
+
+task open_url {
+    say "Opening Aether repository in browser..."
+    execute("start https://github.com/Blank01442/Aether")
+}
+
+task check_site {
+    say "Checking website connectivity..."
+    execute("curl -I https://github.com | findstr HTTP")
+}

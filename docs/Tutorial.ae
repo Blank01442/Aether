@@ -3,9 +3,9 @@
 
 import "sound"
 import "utility" 
-import "win_ui"
-import "web_client"
-import "math_pro"
+import "dialogs"
+import "internet"
+import "math"
 
 // Simple greeting function
 task greet_user {
@@ -81,9 +81,9 @@ task show_utilities {
 }
 
 // Show web functions
-task show_web {
-    say "Web client functions:"
-    call ping_google
+task show_internet {
+    say "Internet functions:"
+    call ping_site
 }
 
 // Main program execution

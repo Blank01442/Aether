@@ -27,12 +27,12 @@ General system utilities:
 - `show_date` - Display current date
 - `show_time` - Display current time
 
-## win_ui Library
+## dialogs Library
 
 Windows interface functions:
 
-- `show_welcome` - Show a welcome message in a dialog box
-- `check_display` - Get and display screen resolution (uses `screen_width()` and `screen_height()`)
+- `show_message` - Show a message in a dialog box
+- `get_screen_info` - Get and display screen resolution (uses `screen_width()` and `screen_height()`)
 
 ## file_io Library
 
@@ -42,24 +42,24 @@ File system operations:
 - `delete_temp` - Delete temporary log files
 - `stamp_time` - Add timestamp (milliseconds since boot) to log file
 
-## web_client Library
+## internet Library
 
-Internet and network functions:
+Network and internet functions:
 
-- `ping_google` - Test internet connectivity by pinging Google
-- `get_ip` - Get your public IP address
-- `download_data` - Download content from a URL to download.tmp
-- `open_browser` - Open default web browser to Aether repository
-- `check_website` - Test connectivity to GitHub
+- `ping_site` - Test internet connectivity by pinging Google
+- `get_my_ip` - Get your public IP address
+- `download_file` - Download content from a URL to download.tmp
+- `open_url` - Open default web browser to Aether repository
+- `check_site` - Test connectivity to GitHub
 
-## app_core Library
+## system Library
 
 Application control:
 
 - `shutdown` - Close the application cleanly
-- `wait_and_exit` - Show exit dialog and then close application
+- `exit_app` - Exit the application
 
-## math_pro Library
+## math Library
 
 Mathematical functions:
 
@@ -68,10 +68,10 @@ Mathematical functions:
 - `add_numbers` - Add two numbers (set `num1` and `num2` variables first)
 - `multiply` - Multiply two numbers (set `num1` and `num2` variables first)
 
-## neural_core Library
+## arrays Library
 
-Array and mathematical operations:
+Array and data structure operations:
 
-- `init_weights` - Initialize a 10-element array with random values (1-100)
-- `calc_activation` - Perform basic calculation (input + bias, default bias=5)
-- `benchmark_neural` - Run performance test with 1000 square root operations
+- `init_array` - Initialize a 10-element array with random values (1-100)
+- `calc_result` - Perform basic calculation (input + bias, default bias=5)
+- `benchmark_ops` - Run performance test with 1000 square root operations

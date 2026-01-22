@@ -1,0 +1,34 @@
+// Arrays library for Aether
+// Array and data structure operations
+
+task init_array {
+    say "Initializing 10-element array..."
+    array data from 10
+    set i to 0
+    while i < 10 {
+        set val to random(1, 100)
+        data[i] to val
+        set i to i + 1
+    }
+    say "Array initialized with random values."
+}
+
+task calc_result {
+    // Basic calculation example
+    set bias to 5
+    set input_val to 50
+    set output to input_val + bias
+    say "Calculation result:"
+    say output
+}
+
+task benchmark_ops {
+    set start to time
+    repeat 1000 times {
+        set x to sqrt(144)
+    }
+    set end to time
+    set diff to end - start
+    say "Benchmark (1000 sqrt ops) Time (ms):"
+    say diff
+}
