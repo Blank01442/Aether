@@ -69,7 +69,7 @@ int main() {
     }
 
     printf("[4/5] Provisioning AI Toolchain (NASM & GCC)...\n");
-    char tool_check[] = "C:\\Aether\\tools\\w64devkit-1.23.0\\bin";
+    char tool_check[] = "C:\\Aether\\tools\\w64devkit\\bin";
     FILE* check = fopen(tool_check, "r");
     if (check) {
         fclose(check);
@@ -98,7 +98,7 @@ int main() {
 
     printf("[5/5] Broadening System Path (User Environment)...\n");
     char path_cmd[2048];
-    char tool_bin[] = "C:\\Aether\\tools\\w64devkit-1.23.0\\bin";
+    char tool_bin[] = "C:\\Aether\\tools\\w64devkit\\bin";
     // Consolidate both bin_path and tool_bin into the user PATH
     sprintf(path_cmd, "powershell -Command \"$p = [System.Environment]::GetEnvironmentVariable('PATH', 'User'); if ($p -notlike '*%s*') { $p += ';%s' }; if ($p -notlike '*%s*') { $p += ';%s' }; [System.Environment]::SetEnvironmentVariable('PATH', $p, 'User')\"", bin_path, bin_path, tool_bin, tool_bin);
     if (system(path_cmd) == 0) {
