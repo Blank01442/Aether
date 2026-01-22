@@ -81,9 +81,10 @@ int main() {
         char dl_tools[] = "curl -L -o C:\\Aether\\tools\\devkit.zip https://github.com/skeeto/w64devkit/releases/download/v1.23.0/w64devkit-1.23.0.zip && powershell -Command \"Expand-Archive -Path 'C:\\Aether\\tools\\devkit.zip' -DestinationPath 'C:\\Aether\\tools' -Force; Remove-Item 'C:\\Aether\\tools\\devkit.zip'\"";
         system(dl_tools);
         // Check if toolchain was actually installed
-        FILE* check_after = fopen(tool_check, "r");
-        if (check_after) {
-            fclose(check_after);
+        char check_cmd[256];
+        sprintf(check_cmd, "if exist \"%s\" (echo success) else (echo failed)", tool_check);
+        int check_result = system(check_cmd);
+        if (check_result == 0) {
             printf("\033[1;32m      Success: Universal toolchain provisioned at C:\\Aether\\tools.\033[0m\n");
         } else {
             printf("\033[1;33m      Warning: Toolchain download failed.\033[0m\n");
