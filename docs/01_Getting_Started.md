@@ -122,13 +122,35 @@ call play_success
 Aether comes with several built-in libraries:
 
 - `sound` - Audio functions
-- `utility` - System utilities  
+- `utility` - System utilities
 - `internet` - Web and network functions
 - `file_io` - File operations
 - `dialogs` - Windows interface
 - `math` - Mathematical operations
 - `arrays` - Array handling
 - `system` - Application control
+- `gui` - Graphical user interface
+
+## Creating Your First GUI App
+
+Aether now supports creating graphical applications! Here's a simple GUI example:
+
+```aether
+import "gui"
+
+// Set window properties
+set title to "My First GUI App"
+set width to 400
+set height to 300
+
+// Create and show the window
+call create_window
+call show_window
+
+// Add a button
+set btn_text to "Click Me!"
+call create_button
+```
 
 ## Customization
 

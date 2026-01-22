@@ -278,3 +278,28 @@ Common libraries include:
 - `math` - Mathematical functions
 - `arrays` - Array and data structure operations
 - `system` - Application lifecycle
+- `gui` - Graphical user interface functions
+
+## Creating GUI Applications
+
+Aether now supports creating graphical user interfaces with the GUI library:
+
+```aether
+import "gui"
+
+// Set window properties
+set title to "My First GUI App"
+set width to 400
+set height to 300
+
+// Create and show the window
+call create_window
+call show_window
+
+// Add a button
+set btn_text to "Click Me!"
+call create_button
+
+// Handle button clicks
+call button_click
+```

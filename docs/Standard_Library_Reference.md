@@ -12,6 +12,20 @@ Functions for playing sounds and audio feedback:
 - `sonar_ping` - Play a sonar sound with random depth detection
 - `custom_beep` - Play a custom beep (set `beep_freq` and `beep_dur` variables first)
 
+## gui Library
+
+Functions for creating graphical user interfaces:
+
+- `create_window` - Create a window (set `title`, `width`, and `height` variables first)
+- `show_window` - Display the window
+- `hide_window` - Hide the window
+- `create_button` - Create a button (set `btn_text` variable first)
+- `button_click` - Handle button click event
+- `create_label` - Create a label (set `lbl_text` variable first)
+- `create_input` - Create an input field (set `placeholder` variable first)
+- `create_menu` - Create a menu (set `menu_title` variable first)
+- `show_message` - Show a message box (set `msg_text` variable first)
+
 ## utility Library
 
 General system utilities:

@@ -1,0 +1,79 @@
+// GUI library for Aether
+// Create graphical user interfaces
+
+// Window functions
+task create_window {
+    // Create a basic window
+    if title and width and height {
+        say "Creating window: "
+        say title
+        say " ("
+        say width
+        say "x"
+        say height
+        say ")"
+    } else {
+        say "Creating default window"
+    }
+}
+
+task show_window {
+    say "Showing window..."
+}
+
+task hide_window {
+    say "Hiding window..."
+}
+
+// Button functions
+task create_button {
+    if btn_text {
+        say "Creating button: "
+        say btn_text
+    } else {
+        say "Creating default button"
+    }
+}
+
+task button_click {
+    say "Button clicked!"
+}
+
+// Label functions
+task create_label {
+    if lbl_text {
+        say "Creating label: "
+        say lbl_text
+    } else {
+        say "Creating default label"
+    }
+}
+
+// Input field functions
+task create_input {
+    if placeholder {
+        say "Creating input field: "
+        say placeholder
+    } else {
+        say "Creating default input field"
+    }
+}
+
+// Menu functions
+task create_menu {
+    if menu_title {
+        say "Creating menu: "
+        say menu_title
+    } else {
+        say "Creating default menu"
+    }
+}
+
+// Message box functions
+task show_message {
+    if msg_text {
+        alert(msg_text)
+    } else {
+        alert("Default message")
+    }
+}

@@ -1,0 +1,76 @@
+// Aether GUI Tutorial
+// Learn how to create graphical user interfaces
+
+import "gui"
+import "utility"
+
+// Create a simple GUI application
+task create_simple_app {
+    say "Creating a simple GUI application..."
+    
+    // Set window properties
+    set title to "Aether GUI Demo"
+    set width to 500
+    set height to 400
+    
+    // Create and show the main window
+    call create_window
+    call show_window
+    
+    // Add a label
+    set lbl_text to "Welcome to Aether GUI!"
+    call create_label
+    
+    // Add a button
+    set btn_text to "Click Me!"
+    call create_button
+    
+    // Add an input field
+    set placeholder to "Enter your name here"
+    call create_input
+    
+    say "GUI application created successfully!"
+}
+
+// Create a more complex GUI
+task create_advanced_app {
+    say "Creating an advanced GUI application..."
+    
+    // Set window properties
+    set title to "Advanced Aether GUI"
+    set width to 600
+    set height to 500
+    
+    // Create and show the main window
+    call create_window
+    call show_window
+    
+    // Add a menu
+    set menu_title to "File"
+    call create_menu
+    
+    // Add multiple controls
+    set lbl_text to "Advanced Controls Demo"
+    call create_label
+    
+    set btn_text to "Submit"
+    call create_button
+    
+    set placeholder to "Advanced input field"
+    call create_input
+    
+    say "Advanced GUI application created!"
+}
+
+// Show a message box
+task show_notification {
+    set msg_text to "Hello from Aether GUI!"
+    call show_message
+}
+
+// Main execution
+call create_simple_app
+call show_notification
+
+// Pause to see the results
+call pause_system
