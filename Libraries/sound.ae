@@ -24,3 +24,17 @@ task sonar_ping {
     say "Sonar depth detected: "
     say i
 }
+
+task custom_beep {
+    if beep_freq and beep_dur {
+        beep(beep_freq, beep_dur)
+        say "Played beep at "
+        say beep_freq
+        say " Hz for "
+        say beep_dur
+        say " ms"
+    } else {
+        beep(440, 200)
+        say "Played default beep. Set beep_freq and beep_dur to customize."
+    }
+}

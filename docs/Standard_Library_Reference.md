@@ -9,8 +9,8 @@ The following libraries are included with every Aether installation. You can use
 Standard mathematical utilities.
 - `say_hi`: Displays a greeting from the math library.
 - `calc_magic`: Demonstrates variable assignment.
-- `add_numbers`: Adds two numbers and displays the result.
-- `multiply`: Multiplies two numbers and displays the result.
+- `add_numbers`: Adds two numbers and displays the result. Set `num1` and `num2` to customize.
+- `multiply`: Multiplies two numbers and displays the result. Set `num1` and `num2` to customize.
 
 ## 2. `neural_core`
 The foundation for building Aether AI agents.
@@ -52,7 +52,7 @@ General-purpose system management.
 - `check_disk`: Reports available storage on logical disks.
 - `list_processes`: Displays current running processes.
 - `show_current_dir`: Displays the current directory path.
-- `create_file`: Creates a new empty text file.
+- `create_file`: Creates a new empty text file. Set `file_name` to customize the filename.
 - `show_date`: Displays the current date.
 - `show_time`: Displays the current time.
 
@@ -62,3 +62,4 @@ Advanced hardware audio control.
 - `play_success`: A 4-step harmonic ascending scale.
 - `play_alert`: A repeating low-frequency alarm.
 - `sonar_ping`: A unique sonar-style pulse with a random depth indicator.
+- `custom_beep`: Plays a beep with custom frequency and duration. Set `beep_freq` and `beep_dur` to customize.
