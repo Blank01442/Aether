@@ -29,12 +29,18 @@ say count
 Conditional statements:
 
 ```aether
-if age >= 18 {
+if age is 18 {
     say "Adult"
 } else {
     say "Minor"
 }
 ```
+
+You can also use other comparison operators:
+- `is` for equality (==)
+- `>` for greater than
+- `<` for less than
+- `!=` for not equal
 
 Loops:
 
