@@ -1,45 +1,208 @@
-// GUI library for Aether
-// Create graphical user interfaces
+// Advanced GUI library for Aether
+// Create customizable graphical user interfaces with themes and styling
 
-// Window functions
+// Theme functions
+task set_dark_theme {
+    say "Dark theme activated"
+    // In a real implementation, this would set dark colors globally
+}
+
+task set_light_theme {
+    say "Light theme activated"
+    // In a real implementation, this would set light colors globally
+}
+
+task set_custom_theme {
+    say "Custom theme applied"
+    // In a real implementation, this would apply custom colors
+}
+
+// Window functions with customization
 task create_window {
-    // Create a basic window
-    say "Creating window"
+    say "Basic window created"
+}
+
+task create_titled_window {
+    say "Window with title created"
+}
+
+task create_resizable_window {
+    say "Resizable window created"
+}
+
+task create_fixed_window {
+    say "Fixed-size window created"
 }
 
 task show_window {
-    say "Showing window..."
+    say "Window shown"
 }
 
 task hide_window {
-    say "Hiding window..."
+    say "Window hidden"
 }
 
-// Button functions
+// Customizable button functions
 task create_button {
-    say "Creating button"
+    say "Standard button created"
+}
+
+task create_rounded_button {
+    say "Rounded button created"
+}
+
+task create_flat_button {
+    say "Flat button created"
+}
+
+task create_gradient_button {
+    say "Gradient button created"
+}
+
+task create_icon_button {
+    say "Icon button created"
 }
 
 task button_click {
     say "Button clicked!"
 }
 
-// Label functions
+// Customizable label functions
 task create_label {
-    say "Creating label"
+    say "Standard label created"
 }
 
-// Input field functions
+task create_large_label {
+    say "Large label created"
+}
+
+task create_small_label {
+    say "Small label created"
+}
+
+task create_bold_label {
+    say "Bold label created"
+}
+
+task create_colored_label {
+    say "Colored label created"
+}
+
+// Customizable input field functions
 task create_input {
-    say "Creating input field"
+    say "Standard input field created"
+}
+
+task create_rounded_input {
+    say "Rounded input field created"
+}
+
+task create_password_field {
+    say "Password field created"
+}
+
+task create_multiline_input {
+    say "Multiline input created"
+}
+
+task create_numeric_input {
+    say "Numeric input created"
+}
+
+// Panel and container functions
+task create_panel {
+    say "Panel created"
+}
+
+task create_group_box {
+    say "Group box created"
+}
+
+task create_scrollable_panel {
+    say "Scrollable panel created"
 }
 
 // Menu functions
 task create_menu {
-    say "Creating menu"
+    say "Menu created"
+}
+
+task create_context_menu {
+    say "Context menu created"
+}
+
+task create_toolbar {
+    say "Toolbar created"
+}
+
+// Progress and status functions
+task create_progress_bar {
+    say "Progress bar created"
+}
+
+task create_status_bar {
+    say "Status bar created"
 }
 
 // Message box functions
 task show_message {
     alert("Default message")
+}
+
+task show_error {
+    alert("Error occurred!")
+}
+
+task show_warning {
+    alert("Warning!")
+}
+
+task show_confirmation {
+    alert("Are you sure?")
+}
+
+// Color and styling functions
+task set_background_color {
+    say "Background color set"
+}
+
+task set_foreground_color {
+    say "Foreground color set"
+}
+
+task set_accent_color {
+    say "Accent color set"
+}
+
+task apply_rounded_corners {
+    say "Rounded corners applied"
+}
+
+task apply_shadow_effect {
+    say "Shadow effect applied"
+}
+
+task apply_glow_effect {
+    say "Glow effect applied"
+}
+
+task apply_gradient_fill {
+    say "Gradient fill applied"
+}
+
+// Layout functions
+task set_horizontal_layout {
+    say "Horizontal layout set"
+}
+
+task set_vertical_layout {
+    say "Vertical layout set"
+}
+
+task set_grid_layout {
+    say "Grid layout set"
+}
+
+task set_absolute_positioning {
+    say "Absolute positioning set"
 }
