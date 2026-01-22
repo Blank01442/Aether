@@ -29,14 +29,8 @@ task show_current_dir {
 }
 
 task create_file {
-    if file_name {
-        execute("echo. > " + file_name)
-        say "Created "
-        say file_name
-    } else {
-        execute("echo. > new_file.txt")
-        say "Created new_file.txt. Set file_name to customize."
-    }
+    execute("echo. > new_file.txt")
+    say "Created new_file.txt"
 }
 
 task show_date {

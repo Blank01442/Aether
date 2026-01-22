@@ -9,8 +9,8 @@ The following libraries are included with every Aether installation. You can use
 Standard mathematical utilities.
 - `say_hi`: Displays a greeting from the math library.
 - `calc_magic`: Demonstrates variable assignment.
-- `add_numbers`: Adds two numbers and displays the result. Set `num1` and `num2` to customize.
-- `multiply`: Multiplies two numbers and displays the result. Set `num1` and `num2` to customize.
+- `add_numbers`: Adds two numbers and displays the result.
+- `multiply`: Multiplies two numbers and displays the result.
 
 ## 2. `neural_core`
 The foundation for building Aether AI agents.
@@ -39,9 +39,9 @@ Native Filesystem Automation.
 Integration with the web and external networks.
 - `ping_google`: Rapid network connectivity test.
 - `get_ip`: Fetches the system's public IP using `curl`.
-- `download_data`: Downloads remote assets to the local directory. Set `download_url` variable to customize the URL.
-- `open_browser`: Opens the default browser. Set `browser_url` variable to customize the URL (defaults to Aether repo).
-- `check_website`: Checks website connectivity. Set `check_url` variable to customize the URL (defaults to GitHub).
+- `download_data`: Downloads remote assets to the local directory.
+- `open_browser`: Opens the default browser to the Aether repository.
+- `check_website`: Checks GitHub connectivity.
 
 ## 7. `utility`
 General-purpose system management.
@@ -52,7 +52,7 @@ General-purpose system management.
 - `check_disk`: Reports available storage on logical disks.
 - `list_processes`: Displays current running processes.
 - `show_current_dir`: Displays the current directory path.
-- `create_file`: Creates a new empty text file. Set `file_name` to customize the filename.
+- `create_file`: Creates a new empty text file.
 - `show_date`: Displays the current date.
 - `show_time`: Displays the current time.
 
